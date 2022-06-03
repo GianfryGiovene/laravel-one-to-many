@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     //
-    protected $fillable = ['title','content',' slug'];
+    protected $fillable = ['title','content',' slug','category_id'];
 
     // prende stringa come input e converte in slug
     public static function convertToSlug($title){
