@@ -27,6 +27,24 @@
                                         @csrf
                                         @method('PUT')
 
+                                        {{-- categoria --}}
+                                        <div class="row flex-column">
+                                            <label for="category">Categoria: </label>
+                                            <select name="category_id"
+                                                class="form-control @error('title') is-invalid @enderror">
+                                                <option value="category_id">--Select Cateogory</option>
+                                                @foreach ($categories as $category)
+                                                    <option value="{{ $category->id }}"
+                                                        {{ $category->id == old('category_id', $post->category_id) ? 'selected' : ' ' }}>
+                                                        {{ $category->name }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                            @error('category_id')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+
                                         <div class="row flex-column">
                                             <label for="title">Titolo: </label>
                                             <input class="form-control @error('title') is-invalid @enderror" type="text"

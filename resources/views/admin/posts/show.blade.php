@@ -13,6 +13,7 @@
                         <div class="card-body">
                             <div>
                                 <p>{{ $post->content }}</p>
+                                <span>Category: {{ $post->category->name }}</span>
                                 <h5>Slug:</h5>
                                 <div>{{ $post->slug }}</div>
                                 <div>
