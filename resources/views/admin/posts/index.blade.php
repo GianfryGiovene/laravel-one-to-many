@@ -12,8 +12,10 @@
                         </div>
                         <div class="card-body">
                             @foreach ($posts as $post)
-                                <div class="row justify-content-between">
+                                <div class="row justify-content-between border-bottom my-3">
+                                    <span>{{ $post->id }}</span>
                                     <a href="{{ route('admin.posts.show', $post->id) }}">{{ $post->title }}</a>
+                                    <span>{{ $post->category->name }}</span>
                                     <div>
                                         <a href="{{ route('admin.posts.edit', $post->id) }}">Edit</a>
 
