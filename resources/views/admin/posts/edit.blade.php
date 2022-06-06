@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 
 @section('content')
     <div class="container">
@@ -56,8 +56,7 @@
 
                                         <div class="row flex-column">
                                             <label for="content">Contenuto: </label>
-                                            <textarea class="form-control @error('content') is-invalid @enderror" name="content"
-                                                value="{{ $post->content }}"></textarea>
+                                            <textarea class="form-control @error('content') is-invalid @enderror" name="content" value="{{ $post->content }}"></textarea>
                                             @error('content')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror

@@ -15,9 +15,10 @@ class AddForeignPostsTable extends Migration
     {
         //
         Schema::table('posts', function (Blueprint $table){
-
+            // per chiavi univoche riferite ad altra tabella
+            // genero la colonna
             $table->unsignedBigInteger('category_id');
-
+            // definisco relazione
             $table->foreign('category_id')->references('id')->on('categories')->setDelete('set null');
         });
 
